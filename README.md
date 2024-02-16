@@ -1,39 +1,91 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# CityServe Tennis League
 
-Welcome,
+Project 4...
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Table of contents
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+## Introduction
 
-## Codeanywhere Reminders
+Welcome...
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+## User Experience (UX)
+### Over Goals of the site
+### Target Audience
+### Site Goals
 
-`python3 -m http.server`
+## User Stories & Aims
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
 
-`http_server`
+## Technologies Used
+### Frameworks, Libraries and Programs
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+- Bootstrap 5: 
+- GitHub:
+- Font Awesome:
+- Visual Studio Code:
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+### Languages
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- HTML
+- CSS
+- JavaScript
 
-To log into the Heroku toolbelt CLI:
+## Features
+### Existing Features
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
----
+### Future Developments
 
-Happy coding!
+**Coming Soon**
+
+
+## Testing
+### User story testing
+
+
+
+### Validator Testing
+
+
+
+### General Continuous Testing
+#### Responsiveness
+
+#### Browser Compatibility
+
+
+
+## De-bugging:
+
+- Corrected an error in the code where 'chr' was written, rather than 'ch' resulting in the code not running correctly and not printing the table or content.
+- When testing the code to see if inputting coordinates was working, i discovered that the grid wasnt being displayed at all. I tried re-writing the 'check shot' function to see if it was interfering with the results, but that didnt fix it. However, this did help me discover another issue, as the original code for this section was not functioning properly and didn't allow the user to enter another guess.
+- In order to fix my original error above, i scanned through the written code and could see that the the 'show_board' and surrounding code at the bottom had not been grouped into a function, so by moving the code into a for loop fucntion, the list then became workable.
+- When adding a new ship, i realised that when writing the second check_shot function that it wasn't as simple as re-writing it the same as ship 1. I needed to add an 'elif' statement so that if there is a miss for both, the code can understand that it has missed both ships not just 1 of them. 
+- When testing after adding a third ship location, the terminal after the first coordinate input was returning a ValueError message, pointing to line 168 as the culprit. I tried re-writing that line of code, ensuring it was written out correctly and included the 'ship3' in its command, however the same message was beign returned each time. So, i started working from the top-down, analysing my code to see if i had missing something earlier on. Within the check shot function i noticed (after many scans) that in the return at the bottom of the function, 'ship3' was not defined. Upon editing this mistake and adding this in, the board now functioned again properly.
+- During some of the final testing stages, it was discovered that there was no message to the user if all attempts had been used, to say the game had ended and that they had lost. This was rectified and added in as a feature.
+- When putting my code through the CI Python Linter, i was met with a multitude of errors, ranging from ' trailing whitespace', 'line too long', missing white space', and 'do not use bare "except"'. Running through my code again, i removed the whitespace where needed and additinally added whitespace where necessary. I also shortened lines of code to fit the 80 character limit by either rewording or using a '\' to move to next line. The "except" term required the addition of 'Exception:' as this is the base type for all 'Regular' exceptions rather than catching all of them, some of which i wouldnt want to catch, if left with just a bare except.
+- During a test from my mentor, it was found that the play_again function was accepting any input as a 'yes' input. To fix this, I changed the function to require a specific 'yes' or 'no' input, otherwise: 'Invalid input. Please enter yes or no.', would be displayed to the user.
+
+## Remaining Bugs:
+
+- No remaining bugs.
+
+# Deployment:
+
+This project was deployed using Code Institute's mock terminal for Heroku.
+
+Steps for deployment:
+
+- Clone this repository.
+- Create a new Heroku app.
+- In the settings, within the 'Config Vars', add the KEY/Value pairs: PORT. Set this to 8000.
+- Set the buildbacks to Python and NodeJs in that order.
+- Link the Heroku app to the repository.
+- Click Deploy.
+
+# Credits
+
+- Inspiration taken from [Dr. Codie](https://drcodie.com/battleships-game-in-python/).
+- Resources used from [Codecademy](https://www.codecademy.com/resources/docs/swift/arrays), and Mimo Coding App.
